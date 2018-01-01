@@ -1,0 +1,51 @@
+/* style projet web */
+
+
+header{
+    margin-top : 3px;
+    margin-left : 90px;
+}
+
+footer{
+   clear : both;
+   text-align: center;
+}
+
+#titre{
+    color :red;
+    text-align : center;
+}
+
+#vente{
+    margin-top : 50px;
+    font-style : italic;
+}
+
+.carousel{
+    margin-top: 30px;
+    margin-bottom : 50px;
+}
+
+.contact_mail{
+    font-style: italic;
+    font-size : 110%;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.réseaux_sociaux1{
+    font-size : 110%;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.réseaux_sociaux2{
+    margin-bottom : 100px;
+    margin-left : 100px;
+}
+
+#bas_de_page{
+    font-size: 80%;
+    font-style: italic;
+    color : grey;
+}
