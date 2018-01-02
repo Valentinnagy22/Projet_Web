@@ -19,7 +19,7 @@ $nbrJeux = count($liste_jeux);
                 </br></br>
                 <div class="row catalogue_plateforme">
                     <div class="col-sm-12">
-                       <img src="./admin/images/<?php print $liste_jeux[$i]['PLATEFORME'] ?>" alt="Plateforme"/>
+                        <img src="./admin/images/<?php print $liste_jeux[$i]['PLATEFORME'] ?>" alt="Plateforme"/>
                     </div>                             
                 </div>
                 <div class="row catalogue_nom">
@@ -49,14 +49,14 @@ $nbrJeux = count($liste_jeux);
                 <div class="row plus_infos">
                     <div class="col-sm-12">
                         </br>
-                        <a href="#"<?php print $liste_jeux[$i]['ID_JEUX']; ?>>
-                         + d'infos
-                        </a>
+                        <a href="index.php?page=commander.php&id=<?php print $liste_jeux[$i]['ID_JEUX']; ?>">
+                            Commander
+                        </a>                 
                     </div>                             
                 </div>
             </div>
         </div>
-    </br>
+        </br>
         <?php
     }
     ?>

@@ -12,6 +12,8 @@ session_start();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>      
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script type="text/javascript" src="admin/lib/js/dist/jquery.validate.js"></script>
+        <script src="admin/lib/js/gt_functionsVal.js"></script>
         <script src="admin/lib/js/gt_function.js"></script>
         <link rel="stylesheet" type="text/css" href="admin/lib/css/style.css">
     </head>
@@ -37,7 +39,7 @@ session_start();
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                   <section id="contenu">
+                    <section id="contenu">
                         <?php
                         /* le contenu change en fonction de la navigation */
                         if (!isset($_SESSION['page'])) {
@@ -51,7 +53,7 @@ session_start();
                         }
 
                         //print $_SESSION['page'];
-                        
+
                         if (file_exists($_SESSION['page'])) {
                             include $_SESSION['page'];
                         } else {

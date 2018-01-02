@@ -7,8 +7,8 @@ header{
 }
 
 footer{
-   clear : both;
-   text-align: center;
+    clear : both;
+    text-align: center;
 }
 
 #titre{
@@ -49,3 +49,51 @@ footer{
     font-style: italic;
     color : grey;
 }
+
+#titre_inscription{  
+    color :cadetblue;
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+
+#form_inscription{
+    margin-bottom: 150px;
+}
+
+#envoyer{
+    padding:8px 0 8px 0;
+    font:bold 13px Arial;
+    background:#478bf9;
+    color:#fff;
+    border-radius:2px;
+    width:100px;
+    border:none;
+}
+
+#reset{
+    padding:8px 0 8px 0;
+    font:bold 13px Arial;
+    background:#478bf9;
+    color:#fff;
+    border-radius:2px;
+    width:100px;
+    border:none;
+}
+
+.reussi{
+    color :red;
+    font-weight :bold;
+    font-style :italic;
+    margin-top: 20px;
+}
+
+#se_connecter{
+    padding:8px 0 8px 0;
+    font:bold 13px Arial;
+    background:#478bf9;
+    color:#fff;
+    border-radius:2px;
+    width:100px;
+    border:none;
+}
+
