@@ -10,7 +10,7 @@ $nbrJeux = count($liste_jeux);
     <?php
     for ($i = 0; $i < $nbrJeux; $i++) {
         ?>
-        <div class="row catalogue_image">
+        <div class="row catalogue">
             <div class="col-sm-3">
                 </br></br>
                 <img src="./admin/images/<?php print $liste_jeux[$i]['IMAGE'] ?>" alt="Jeux"/>
@@ -46,12 +46,20 @@ $nbrJeux = count($liste_jeux);
                         ?>€
                     </div>                             
                 </div>
-                <div class="row plus_infos">
+                <div class="row catalogue_commander">
                     <div class="col-sm-12">
                         </br>
-                        <a href="index.php?page=commander.php&id=<?php print $liste_jeux[$i]['ID_JEUX']; ?>">
-                            Commander
-                        </a>                 
+                        <?php
+                        if (isset($_SESSION['client'])) {
+                            ?>
+                            <a href="index.php?page=commander.php&id=<?php print $liste_jeux[$i]['ID_JEUX']; ?>">
+                                Commander
+                            </a> 
+                            <?php }else{
+                                print "Veuillez vous connectez pour commander.";
+                            }
+                        ?>
+
                     </div>                             
                 </div>
             </div>

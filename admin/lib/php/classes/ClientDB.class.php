@@ -40,7 +40,7 @@ class ClientDB extends Client {
             if (!empty($data)) {
                 try {
                     $_client[] = new Client($data);
-                    if ($_client[0]->EMAIL == "$email" && $_client[0]->MDP == $mdp) {
+                    if ($_client[0]->EMAIL == $email && $_client[0]->MDP == $mdp) {
                         return $_client;
                     } else {
                         return null;

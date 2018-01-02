@@ -97,3 +97,28 @@ footer{
     border:none;
 }
 
+#acheter{
+    padding:8px 0 8px 0;
+    font:bold 13px Arial;
+    background:#478bf9;
+    color:#fff;
+    border-radius:2px;
+    width:100px;
+    border:none;
+}
+
+#annuler{
+    padding:8px 0 8px 0;
+    font:bold 13px Arial;
+    background:#478bf9;
+    color:#fff;
+    border-radius:2px;
+    width:100px;
+    border:none;
+}
+
+.commander_commander{
+    margin-top : 10px;
+    margin-bottom : 150px;
+}
+

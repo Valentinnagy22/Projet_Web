@@ -16,14 +16,36 @@ class JeuxDB extends Jeux {
             $resultset->execute();
             //$data = $resultset->fetchAll();
             //var_dump($data);
-            while($data = $resultset->fetch()){
+            while ($data = $resultset->fetch()) {
                 $_infoArray[] = $data;
             }
             return $_infoArray;
         } catch (PDOException $e) {
             print "Erreur " . $e->getMessage();
         }
-        
+    }
+
+    function getJeux($id) {
+        try {
+            $query = "SELECT * FROM JEUX where ID_JEUX=:id_jeux";
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':id_jeux', $id);
+            $resultset->execute();
+            $data = $resultset->fetchAll();
+//var_dump($data);
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = $data;
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        return $_infoArray;
     }
 
 }
