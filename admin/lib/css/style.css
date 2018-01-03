@@ -50,34 +50,14 @@ footer{
     color : grey;
 }
 
-#titre_inscription{  
+#titre_inscription, #titre_connexion{  
     color :cadetblue;
     margin-top: 30px;
     margin-bottom: 80px;
 }
 
-#form_inscription{
+#form_inscription, #form_connexion{ 
     margin-bottom: 150px;
-}
-
-#envoyer{
-    padding:8px 0 8px 0;
-    font:bold 13px Arial;
-    background:#478bf9;
-    color:#fff;
-    border-radius:2px;
-    width:100px;
-    border:none;
-}
-
-#reset{
-    padding:8px 0 8px 0;
-    font:bold 13px Arial;
-    background:#478bf9;
-    color:#fff;
-    border-radius:2px;
-    width:100px;
-    border:none;
 }
 
 .reussi{
@@ -87,27 +67,7 @@ footer{
     margin-top: 20px;
 }
 
-#se_connecter{
-    padding:8px 0 8px 0;
-    font:bold 13px Arial;
-    background:#478bf9;
-    color:#fff;
-    border-radius:2px;
-    width:100px;
-    border:none;
-}
-
-#acheter{
-    padding:8px 0 8px 0;
-    font:bold 13px Arial;
-    background:#478bf9;
-    color:#fff;
-    border-radius:2px;
-    width:100px;
-    border:none;
-}
-
-#annuler{
+#acheter, #annuler, #reset, #envoyer, #envoyer2, #reset2{
     padding:8px 0 8px 0;
     font:bold 13px Arial;
     background:#478bf9;

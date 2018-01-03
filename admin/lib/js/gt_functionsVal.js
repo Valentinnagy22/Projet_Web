@@ -21,12 +21,22 @@ $(document).ready(function () {
                 form.submit();
             }
         }
-    });    
+    });  
+    
+    $("#form_connexion").validate({
+        rules: {
+            email3: "required",          
+            mdp3: "required",
+            submitHandler: function (form) {
+                form.submit();
+            }
+        }
+    });   
+    
     //TRADUCTION DES MESSAGES DE VALIDATION EN FRANÇAIS
     $.extend($.validator.messages, {
         required: "Veuillez renseigner ce champ.",
         email: "Veuillez renseigner un email valide.",
-        equalTo: "Les champs ne correspondent pas.",
-        regex: "Format non conforme(xxxx/xx.xx.xx requis)"
+        equalTo: "Les champs ne correspondent pas."
     });
 });

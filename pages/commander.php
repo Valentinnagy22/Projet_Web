@@ -1,15 +1,19 @@
 <?php
 if (isset($_GET['id'])) {
     $_SESSION['id_jeux'] = $_GET['id'];
-
 }
 if (isset($_SESSION['id_jeux'])) {
     $jeux = new JeuxDB($cnx);
     $jeux_choisi = $jeux->getJeux($_SESSION['id_jeux']); 
-    print ($_SESSION['mon_client']);
 }
-?>
 
+if (isset($_GET['acheter'])) {
+    $commande = new CommandeDB($cnx);
+    $commande->addCommande(array("id_client"=>$_SESSION['mon_client'],"id_jeux"=>$_SESSION['id_jeux'],"prix" =>$jeux_choisi[0]['PRIX'] ));
+}
+
+?>
+<form action="<?php print $_SERVER['PHP_SELF'];?>" method="get" id="form_commande">
 <div class="row commander_commander">
     <div class="col-sm-3">
         </br></br>
@@ -60,5 +64,5 @@ if (isset($_SESSION['id_jeux'])) {
             </div>
         </div>
     </div>
-
 </div>
+</form>

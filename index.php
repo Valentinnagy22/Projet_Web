@@ -29,7 +29,7 @@ session_start();
         </div>
         <div class="container">
             <div class="row">
-                <div class ="col-sm-12">
+                <div class ="col-sm-11">
                     <?php
                     if (file_exists("./lib/php/p_menu.php")) {
                         include("./lib/php/p_menu.php");
