@@ -11,8 +11,8 @@ class ClientDB extends Client {
 
     public function addClient(array $data) {
 
-        $query = "insert into CLIENT (NOM,PRENOM,MDP,EMAIL)"
-                . " values (:nom,:prenom,:mdp,:email)";
+        $query = "insert into CLIENT (NOM,PRENOM,MDP,EMAIL,ADRESSE,LOCALITE,CP,TELEPHONE)"
+                . " values (:nom,:prenom,:mdp,:email,:adresse,:localite,:cp,:telephone)";
 
         try {
             $resultset = $this->_db->prepare($query);
@@ -20,6 +20,10 @@ class ClientDB extends Client {
             $resultset->bindValue(':prenom', $data['prenom'], PDO::PARAM_STR);
             $resultset->bindValue(':mdp', $data['mdp'], PDO::PARAM_STR);
             $resultset->bindValue(':email', $data['email'], PDO::PARAM_STR);
+            $resultset->bindValue(':adresse', $data['adresse'], PDO::PARAM_STR);
+            $resultset->bindValue(':localite', $data['localite'], PDO::PARAM_STR);
+            $resultset->bindValue(':cp', $data['cp'], PDO::PARAM_STR);
+            $resultset->bindValue(':telephone', $data['tel'], PDO::PARAM_STR);
             $resultset->execute();
             //$retour = $resultset->fetchColumn(0);
             //return $retour;

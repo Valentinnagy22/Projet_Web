@@ -3,13 +3,11 @@
 if (isset($_POST['envoyer2'])) {
     $log = new ClientDB($cnx);
     $client = $log->isClient($_POST['email3'], $_POST['mdp3']);
-    print $client[0]->ID_CLIENT;
     if (is_null($client)) {
         
     } else {
         $_SESSION['client'] = 1;
         $_SESSION['mon_client'] = $client[0]->ID_CLIENT;
-        var_dump($_SESSION['mon_client']);
         ?>
         <meta http-equiv = "refresh": content = "0;url=index.php?page=accueil.php">
         <?php
