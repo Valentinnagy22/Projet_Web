@@ -82,3 +82,22 @@ footer{
     margin-bottom : 150px;
 }
 
+.menu_profil{
+    margin-top :30px;
+    font-weight: bold;
+    font-size: 110%;
+    margin-left: 180px;
+}
+
+.profil_info{
+    margin-top : 50px;
+    margin-left : 200px;
+    margin-bottom: 150px;
+    font-style: italic;
+    font-size: 120%;
+}
+
+label{
+    font-weight: bold;
+    color : cadetblue;
+}
