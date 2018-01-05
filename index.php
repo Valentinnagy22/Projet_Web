@@ -3,6 +3,7 @@ include './admin/lib/php/adm_liste_include.php';
 $cnx = Connexion::getInstance($dsn, $user, $pass);
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -73,3 +74,4 @@ session_start();
         </div>
     </body>
 </html>
+

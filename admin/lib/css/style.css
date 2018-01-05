@@ -101,3 +101,20 @@ label{
     font-weight: bold;
     color : cadetblue;
 }
+
+.mes_commandes{
+    margin-top : 50px;
+    margin-bottom: 150px;
+}
+
+.profilcmd_numcommande{
+    font-size: 120%;
+    color: red;
+    margin-bottom : 10px;
+    font-weight: bold;
+}
+
+.profilcmd_info{
+    margin-bottom: 20px;
+    font-style : italic;
+}
