@@ -1,4 +1,4 @@
-﻿<?php
+﻿ <?php
 if (isset($_POST['envoyer2'])) {
     $log = new ClientDB($cnx);
     $client = $log->isClient($_POST['email3'], $_POST['mdp3']);
@@ -7,7 +7,6 @@ if (isset($_POST['envoyer2'])) {
     } else {
         $_SESSION['client'] = 1;
         $_SESSION['mon_client'] = $client[0]->ID_CLIENT;
-        
     }
 }
 ?>

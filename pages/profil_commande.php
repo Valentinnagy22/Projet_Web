@@ -44,7 +44,7 @@ if (isset($_SESSION['mon_client'])) {
             </div>
             <div class="col-sm-2">
 
-                <a style ="button" href="index.php?page=imprimer.php&id=<?php print $commande_client[$i]['ID_COMMANDE']; ?>">
+                <a style ="button" href="./pages/imprimer.php&id=<?php print $commande_client[$i]['ID_COMMANDE']; ?>">
                     Facture
                 </a> 
             </div>
