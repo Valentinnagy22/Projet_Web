@@ -1,7 +1,5 @@
 <?php
-if (isset($_GET['id'])) {
-    $_SESSION['id_commande'] = $_GET['id'];
-}
+
 
 require 'C:\wamp64\www\projet web\projet_2017\admin\lib\php\fpdf\fpdf.php';
 
@@ -10,4 +8,6 @@ $pdf->SetFont('Arial', 'B', 14);
 $pdf->AddPage();
 $pdf->setX(8.5);
 $pdf->cell(3.5, 1, UTF8_decode('Facture'), 0, 0, 'C');
+$pdf->Output();
+
 ?>
