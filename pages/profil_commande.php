@@ -34,10 +34,19 @@ if (isset($_SESSION['mon_client'])) {
                 <label>Effectué le :</label> <?php print $commande_client[$i]['DATE'] ?>
             </div>
             <div class="col-sm-3">
-                <label>Nom du jeu :</label> <?php $jeux_choisi = $jeux->getJeux($commande_client[$i]['ID_JEUX']); print $jeux_choisi[0]['NOM'] ?>
+                <label>Nom du jeu :</label> <?php
+                $jeux_choisi = $jeux->getJeux($commande_client[$i]['ID_JEUX']);
+                print $jeux_choisi[0]['NOM']
+                ?>
             </div>
             <div class="col-sm-2">
                 <label>Prix :</label> <?php print $commande_client[$i]['PRIX'] ?>
+            </div>
+            <div class="col-sm-2">
+
+                <a style ="button" href="index.php?page=imprimer.php&id=<?php print $commande_client[$i]['ID_COMMANDE']; ?>">
+                    Facture
+                </a> 
             </div>
         </div>
         <?php

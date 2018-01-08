@@ -56,7 +56,7 @@ footer{
     margin-bottom: 80px;
 }
 
-#form_inscription, #form_connexion{ 
+#form_inscription{ 
     margin-bottom: 150px;
 }
 
@@ -117,4 +117,13 @@ label{
 .profilcmd_info{
     margin-bottom: 20px;
     font-style : italic;
+}
+
+#connexionModal{
+    color : red;
+}
+
+#envoyer2, #reset2{
+    margin-top : 20px;
+    margin-left : 10px;
 }
