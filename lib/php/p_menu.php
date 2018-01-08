@@ -7,25 +7,7 @@ if (isset($_POST['envoyer2'])) {
     } else {
         $_SESSION['client'] = 1;
         $_SESSION['mon_client'] = $client[0]->ID_CLIENT;
-        ?>
-        <meta http-equiv = "refresh": content = "0;url=index.php?page=accueil.php">
-        <?php
-    }
-}
-
-if (isset($_POST['se_connecter'])) {
-    $log = new AdminDB($cnx);
-    $admin = $log->isAdmin($_POST['login'], $_POST['mdp4']);
-    //print $admin[0]->ID_ADMIN;
-    if (is_null($admin)) {
         
-    } else {
-        $_SESSION['admin'] = 1;
-        $_SESSION['mon_admin'] = $admin[0]->ID_ADMIN;
-        //var_dump($_SESSION['mon_admin']);
-        ?>
-        <meta http-equiv = "refresh": content = "0;url=index.php?page=catalogue.php">
-        <?php
     }
 }
 ?>
@@ -53,28 +35,6 @@ if (isset($_POST['se_connecter'])) {
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Connexion admin</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" id="form_admin">
-                    <input type="text" id="login" name="login" size="30" placeholder="Votre login"/>
-                    </br>
-                    <input type="password" id="mdp4" name="mdp4" size="30" placeholder="Votre mot de passe"/>
-                    </br>
-                    <input type="submit" name="se_connecter" id="se_connecter" value="Se connecter" class="pull-right"> 
-                    <input type="reset" id="reset3" value="Annuler" class="pull-left"/>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <?php
 if (isset($_SESSION['client'])) {
@@ -106,7 +66,7 @@ if (isset($_SESSION['client'])) {
                 <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#connexionModal"><img src="./admin/images/connexion.jpg"/>Connexion</a>
                 <a class="nav-item nav-link" href="index.php?page=inscription.php"><img src="./admin/images/inscription.jpg"/>Inscription</a>
                 <a class="nav-item nav-link" href="index.php?page=contact.php"><img src="./admin/images/contact.jpg"/>Contact</a>
-                <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#exampleModal"><img src="./admin/images/admin.jpg"/>Administration</a>
+                <a class="nav-item nav-link" href="./admin/index.php"><img src="./admin/images/admin.jpg"/>Administration</a>
             </div>
         </div>
     </nav>
