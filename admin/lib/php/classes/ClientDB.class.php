@@ -1,9 +1,9 @@
 <?php
 
-class ClientDB extends Client {
+class ClientDB extends Client{
 
     private $_db;
-    private $_client = array();
+    private $_infoArray = array();
 
     public function __construct($cnx) {
         $this->_db = $cnx;
@@ -32,7 +32,7 @@ class ClientDB extends Client {
             print $e->getMessage();
         }
     }
-    
+
     function isClient($email, $mdp) {
         try {
             $query = "select * from CLIENT where EMAIL = :email and MDP = :mdp";
@@ -57,7 +57,7 @@ class ClientDB extends Client {
             print "Echec de la requ&ecirc;te." . $e->getMessage();
         }
     }
-    
+
     function getClient($id) {
         try {
             $query = "SELECT * FROM CLIENT where ID_CLIENT=:id_client";
@@ -80,5 +80,6 @@ class ClientDB extends Client {
         }
         return $_infoArray;
     }
+
 
 }

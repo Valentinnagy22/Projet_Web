@@ -51,4 +51,27 @@ class CommandeDB extends Commande {
         return $_infoArray;
     }
     
+    function getCommande($id) {
+        try {
+            $query = "SELECT * FROM COMMANDE where ID_COMMANDE=:id_commande";
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':id_commande', $id);
+            $resultset->execute();
+            $data = $resultset->fetchAll();
+//var_dump($data);
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = $data;
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        return $_infoArray;
+    }
+    
 }
