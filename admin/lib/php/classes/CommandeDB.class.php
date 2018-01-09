@@ -11,7 +11,7 @@ class CommandeDB extends Commande {
 
     public function addCommande(array $data) {
 
-        $query = "insert into COMMANDE (ID_CLIENT,ID_JEUX,PRIX)"
+        $query = "insert into COMMANDE (ID_CLIENT_COMMANDE,ID_JEUX_COMMANDE,PRIX_COMMANDE)"
                 . " values (:id_client,:id_jeux,:prix)";
 
         try {
@@ -30,9 +30,9 @@ class CommandeDB extends Commande {
     
     function getCommandeClient($id) {
         try {
-            $query = "SELECT * FROM COMMANDE where ID_CLIENT=:id_client";
+            $query = "SELECT * FROM COMMANDE where ID_CLIENT_COMMANDE=:id_client_commande";
             $resultset = $this->_db->prepare($query);
-            $resultset->bindValue(':id_client', $id);
+            $resultset->bindValue(':id_client_commande', $id);
             $resultset->execute();
             $data = $resultset->fetchAll();
 //var_dump($data);
@@ -94,6 +94,17 @@ class CommandeDB extends Commande {
             }
         }
         return $_infoArray;
+    }
+    
+                public function updateCommande($champ,$nouveau,$id){                
+        try {
+            $query="UPDATE COMMANDE set ".$champ." = '".$nouveau."' where ID_COMMANDE ='".$id."'";            
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();            
+            
+        }catch(PDOException $e){
+            print $e->getMessage();
+        }
     }
     
 }

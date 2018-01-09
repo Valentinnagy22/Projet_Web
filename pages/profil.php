@@ -20,7 +20,7 @@ if (isset($_SESSION['mon_client'])) {
             <label id="label-info">Nom :</label>
         </div>
         <div class="col-sm-5">
-            <?php print utf8_decode($client_connecte[0]['NOM']); ?>
+            <?php print utf8_decode($client_connecte[0]['NOM_CLIENT']); ?>
         </div>
     </div>
     <div class="row">
@@ -28,7 +28,7 @@ if (isset($_SESSION['mon_client'])) {
             <label id="label-info">Prénom :</label>
         </div>
         <div class="col-sm-5">
-            <?php print utf8_decode($client_connecte[0]['PRENOM']); ?>
+            <?php print utf8_decode($client_connecte[0]['PRENOM_CLIENT']); ?>
         </div>
     </div>
     <div class="row">
@@ -36,7 +36,7 @@ if (isset($_SESSION['mon_client'])) {
             <label id="label-info">Email :</label>
         </div>
         <div class="col-sm-5">
-            <?php print utf8_decode($client_connecte[0]['EMAIL']); ?>
+            <?php print utf8_decode($client_connecte[0]['EMAIL_CLIENT']); ?>
         </div>
     </div>
     <div class="row">
@@ -44,7 +44,7 @@ if (isset($_SESSION['mon_client'])) {
             <label id="label-info">Adresse :</label>
         </div>
         <div class="col-sm-5">
-            <?php print utf8_decode($client_connecte[0]['ADRESSE']); ?>
+            <?php print utf8_decode($client_connecte[0]['ADRESSE_CLIENT']); ?>
         </div>
     </div>
     <div class="row">
@@ -52,7 +52,7 @@ if (isset($_SESSION['mon_client'])) {
             <label id="label-info">Localité :</label>
         </div>
         <div class="col-sm-5">
-            <?php print utf8_decode($client_connecte[0]['LOCALITE']); ?>
+            <?php print utf8_decode($client_connecte[0]['LOCALITE_CLIENT']); ?>
         </div>
     </div>
     <div class="row">
@@ -60,7 +60,7 @@ if (isset($_SESSION['mon_client'])) {
             <label id="label-info">Code postal :</label>
         </div>
         <div class="col-sm-5">
-            <?php print utf8_decode($client_connecte[0]['CP']); ?>
+            <?php print utf8_decode($client_connecte[0]['CP_CLIENT']); ?>
         </div>
     </div>
     <div class="row">
@@ -68,7 +68,7 @@ if (isset($_SESSION['mon_client'])) {
             <label id="label-info">Téléphone :</label>
         </div>
         <div class="col-sm-5">
-            <?php print utf8_decode($client_connecte[0]['TELEPHONE']); ?>
+            <?php print utf8_decode($client_connecte[0]['TELEPHONE_CLIENT']); ?>
         </div>
     </div>
 </div>

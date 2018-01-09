@@ -20,9 +20,9 @@ if (isset($_SESSION['id_commande'])) {
     $commande = new CommandeDB($cnx);
     $commande_facture = $commande->getCommande($_SESSION['id_commande']);
     $client = new ClientDB($cnx);
-    $client_facture =$client->getClient($commande_facture[0]['ID_CLIENT']);
+    $client_facture =$client->getClient($commande_facture[0]['ID_CLIENT_COMMANDE']);
     $jeux = new JeuxDB($cnx);
-    $jeux_facture =$jeux->getJeux($commande_facture[0]['ID_JEUX']);
+    $jeux_facture =$jeux->getJeux($commande_facture[0]['ID_JEUX_COMMANDE']);
 }
 
 require 'C:\wamp64\www\projet web\projet_2017\admin\lib\php\fpdf\fpdf.php';
@@ -39,17 +39,17 @@ $pdf->Ln(0, 0);
 $pdf->SetFont('Arial', 'B', 16);
 $pdf->SetTextColor(200, 10, 10);
 $pdf->Cell(60);
-$pdf->Cell(50, 40, UTF8_decode('Commande numéro ') . $commande_facture[0]['ID_CLIENT'], 'C');
+$pdf->Cell(50, 40, UTF8_decode('Commande numéro ') . $commande_facture[0]['ID_COMMANDE'], 'C');
 $pdf->Ln(0, 0);
 
 $pdf->SetFont('Arial', 'I', 11);
 $pdf->SetTextColor(0, 0, 0);
 $pdf->Cell(3);
-$pdf->Cell(50, 85, UTF8_decode('Date et heure de la commande : ') . $commande_facture[0]['DATE'], 'C');
+$pdf->Cell(50, 85, UTF8_decode('Date et heure de la commande : ') . $commande_facture[0]['DATE_COMMANDE'], 'C');
 $pdf->Ln(0, 0);
 
 $pdf->Cell(3);
-$pdf->Cell(50, 105, UTF8_decode('Client concerné : ') . $client_facture[0]['NOM']. (' ') . $client_facture[0]['PRENOM'], 'C');
+$pdf->Cell(50, 105, UTF8_decode('Client concerné : ') . $client_facture[0]['NOM_CLIENT']. (' ') . $client_facture[0]['PRENOM_CLIENT'], 'C');
 $pdf->Ln(0, 0);
 
  $pdf->SetFont('Arial','B',12);
@@ -71,11 +71,11 @@ $pdf->Ln(0, 0);
  $pdf->Ln(0,0);
  
  $pdf->Cell(60);
- $pdf->Cell(50,190,$jeux_facture[0]['NOM'],'C');
+ $pdf->Cell(50,190,$jeux_facture[0]['NOM_JEUX'],'C');
  $pdf->Ln(0,0);
  
  $pdf->Cell(130);
- $pdf->Cell(50,190,$commande_facture[0]['PRIX'],'C');
+ $pdf->Cell(50,190,$commande_facture[0]['PRIX_COMMANDE'],'C');
  $pdf->Ln(0,0);
  
  $pdf->Cell(142);
@@ -88,7 +88,7 @@ $pdf->Ln(0, 0);
  $pdf->Ln(0,0);
  
  $pdf->Cell(50);
- $pdf->Cell(50,240,$commande_facture[0]['PRIX'],'C');
+ $pdf->Cell(50,240,$commande_facture[0]['PRIX_COMMANDE'],'C');
  $pdf->Ln(0,0);
  
  $pdf->Cell(70);

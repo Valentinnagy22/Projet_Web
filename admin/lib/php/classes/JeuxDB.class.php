@@ -69,5 +69,16 @@ class JeuxDB extends Jeux {
         }
         return $_infoArray;
     }
+    
+            public function updateJeux($champ,$nouveau,$id){                
+        try {
+            $query="UPDATE JEUX set ".$champ." = '".$nouveau."' where ID_JEUX ='".$id."'";            
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();            
+            
+        }catch(PDOException $e){
+            print $e->getMessage();
+        }
+    }
 
 }

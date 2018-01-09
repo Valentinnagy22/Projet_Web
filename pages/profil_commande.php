@@ -31,16 +31,16 @@ if (isset($_SESSION['mon_client'])) {
         <div class="row profilcmd_info">
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
-                <label>Effectué le :</label> <?php print $commande_client[$i]['DATE'] ?>
+                <label>Effectué le :</label> <?php print $commande_client[$i]['DATE_COMMANDE'] ?>
             </div>
             <div class="col-sm-3">
                 <label>Nom du jeu :</label> <?php
-                $jeux_choisi = $jeux->getJeux($commande_client[$i]['ID_JEUX']);
-                print $jeux_choisi[0]['NOM']
+                $jeux_choisi = $jeux->getJeux($commande_client[$i]['ID_JEUX_COMMANDE']);
+                print $jeux_choisi[0]['NOM_JEUX']
                 ?>
             </div>
             <div class="col-sm-2">
-                <label>Prix :</label> <?php print $commande_client[$i]['PRIX'] ?>
+                <label>Prix :</label> <?php print $commande_client[$i]['PRIX_COMMANDE'] ?>
             </div>
             <div class="col-sm-2">
                 <a href="./pages/imprimer.php?id=<?php print $commande_client[$i]['ID_COMMANDE']; ?>">

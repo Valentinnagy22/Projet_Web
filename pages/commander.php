@@ -9,7 +9,7 @@ if (isset($_SESSION['id_jeux'])) {
 
 if (isset($_GET['acheter'])) {
     $commande = new CommandeDB($cnx);
-    $commande->addCommande(array("id_client" => $_SESSION['mon_client'], "id_jeux" => $_SESSION['id_jeux'], "prix" => $jeux_choisi[0]['PRIX']));
+    $commande->addCommande(array("id_client" => $_SESSION['mon_client'], "id_jeux" => $_SESSION['id_jeux'], "prix" => $jeux_choisi[0]['PRIX_JEUX']));
 }
 ?>
 
@@ -17,20 +17,20 @@ if (isset($_GET['acheter'])) {
     <div class="row commander_commander">
         <div class="col-sm-3">
             </br></br>
-            <img src="./admin/images/<?php print $jeux_choisi[0]['IMAGE'] ?>" alt="Jeux"/>
+            <img src="./admin/images/<?php print $jeux_choisi[0]['IMAGE_JEUX'] ?>" alt="Jeux"/>
         </div>
         <div class="col-sm-4 text-center"> 
             </br></br>
             <div class="row catalogue_plateforme">
                 <div class="col-sm-12">
-                    <img src="./admin/images/<?php print $jeux_choisi[0]['PLATEFORME'] ?>" alt="Plateforme"/>
+                    <img src="./admin/images/<?php print $jeux_choisi[0]['PLATEFORME_JEUX'] ?>" alt="Plateforme"/>
                 </div>                             
             </div>
             <div class="row catalogue_nom">
                 <div class="col-sm-12">
                     </br></br>
                     <?php
-                    print utf8_decode($jeux_choisi[0]['NOM']);
+                    print utf8_decode($jeux_choisi[0]['NOM_JEUX']);
                     ?>
                 </div>                             
             </div>
@@ -38,7 +38,7 @@ if (isset($_GET['acheter'])) {
                 <div class="col-sm-12">
                     </br>
                     <?php
-                    print utf8_decode($jeux_choisi[0]['GENRE']);
+                    print utf8_decode($jeux_choisi[0]['GENRE_JEUX']);
                     ?>
                 </div>                             
             </div>
@@ -46,7 +46,7 @@ if (isset($_GET['acheter'])) {
                 <div class="col-sm-12">
                     </br>
                     <?php
-                    print utf8_decode($jeux_choisi[0]['PRIX']);
+                    print utf8_decode($jeux_choisi[0]['PRIX_JEUX']);
                     ?>€
                 </div>                             
             </div>

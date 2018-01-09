@@ -13,20 +13,20 @@ $nbrJeux = count($liste_jeux);
         <div class="row catalogue">
             <div class="col-sm-3">
                 </br></br>
-                <img src="./admin/images/<?php print $liste_jeux[$i]['IMAGE'] ?>" alt="Jeux"/>
+                <img src="./admin/images/<?php print $liste_jeux[$i]['IMAGE_JEUX'] ?>" alt="Jeux"/>
             </div>
             <div class="col-sm-4 text-center"> 
                 </br></br>
                 <div class="row catalogue_plateforme">
                     <div class="col-sm-12">
-                        <img src="./admin/images/<?php print $liste_jeux[$i]['PLATEFORME'] ?>" alt="Plateforme"/>
+                        <img src="./admin/images/<?php print $liste_jeux[$i]['PLATEFORME_JEUX'] ?>" alt="Plateforme"/>
                     </div>                             
                 </div>
                 <div class="row catalogue_nom">
                     <div class="col-sm-12">
                         </br></br>
                         <?php
-                        print utf8_decode($liste_jeux[$i]['NOM']);
+                        print utf8_decode($liste_jeux[$i]['NOM_JEUX']);
                         ?>
                     </div>                             
                 </div>
@@ -34,7 +34,7 @@ $nbrJeux = count($liste_jeux);
                     <div class="col-sm-12">
                         </br>
                         <?php
-                        print utf8_decode($liste_jeux[$i]['GENRE']);
+                        print utf8_decode($liste_jeux[$i]['GENRE_JEUX']);
                         ?>
                     </div>                             
                 </div>
@@ -42,7 +42,7 @@ $nbrJeux = count($liste_jeux);
                     <div class="col-sm-12">
                         </br>
                         <?php
-                        print utf8_decode($liste_jeux[$i]['PRIX']);
+                        print utf8_decode($liste_jeux[$i]['PRIX_JEUX']);
                         ?>€
                     </div>                             
                 </div>

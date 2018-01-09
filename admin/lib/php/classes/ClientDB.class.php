@@ -12,7 +12,7 @@ class ClientDB extends Client{
 
     public function addClient(array $data) {
 
-        $query = "insert into CLIENT (NOM,PRENOM,MDP,EMAIL,ADRESSE,LOCALITE,CP,TELEPHONE)"
+        $query = "insert into CLIENT (NOM_CLIENT,PRENOM_CLIENT,MDP_CLIENT,EMAIL_CLIENT,ADRESSE_CLIENT,LOCALITE_CLIENT,CP_CLIENT,TELEPHONE_CLIENT)"
                 . " values (:nom,:prenom,:mdp,:email,:adresse,:localite,:cp,:telephone)";
 
         try {
@@ -36,7 +36,7 @@ class ClientDB extends Client{
 
     function isClient($email, $mdp) {
         try {
-            $query = "select * from CLIENT where EMAIL = :email and MDP = :mdp";
+            $query = "select * from CLIENT where EMAIL_CLIENT = :email and MDP_CLIENT = :mdp";
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':email', $email);
             $resultset->bindValue(':mdp', $mdp);
@@ -45,7 +45,7 @@ class ClientDB extends Client{
             if (!empty($data)) {
                 try {
                     $_client[] = new Client($data);
-                    if ($_client[0]->EMAIL == $email && $_client[0]->MDP == $mdp) {
+                    if ($_client[0]->EMAIL_CLIENT == $email && $_client[0]->MDP_CLIENT == $mdp) {
                         return $_client;
                     } else {
                         return null;

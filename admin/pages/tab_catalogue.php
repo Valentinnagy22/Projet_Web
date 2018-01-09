@@ -1,34 +1,55 @@
-<h2 id="titre_gestion_cli">Gestion du catalogue</h2>
-<br/>
 <?php
-$catalogue = new JeuxDB($cnx);
-$liste_cat = $catalogue->getAllJeux();
+$jeux = new JeuxDB($cnx);
+$liste_cat = $jeux->getAllJeux();
 $nb_cat = count($liste_cat);
-//var_dump($liste_cat);
+//var_dump($liste_cli);
 ?>
+
 
 <table class="table-responsive">
     <?php
     echo "<br><table cellspacing=10 border=2 BORDERCOLOR=#6666FF width=80% align=center bgcolor=#ffffff>";
     ?>
     <tr>
-        <th class="ecart">ID</th>
-        <th class="ecart">GENRE</th>
-        <th class="ecart">NOM</th>
-        <th class="ecart">PRIX</th>
-        <th class="ecart">PLATEFORME</th>
-        <th class="ecart">IMAGE</th>
+        <th class="ecart">Id</th>
+        <th class="ecart">Nom</th>
+        <th class="ecart">Genre</th>
+        <th class="ecart">Prix</th>
+        <th class="ecart">Image</th>
+        <th class="ecart">Plateforme</th>
     </tr>
     <?php
     for ($i = 0; $i < $nb_cat; $i++) {
         ?>
         <tr>
-            <td class="ecart"><?php print $liste_cat[$i]['ID_JEUX']; ?></td>
-            <td class="ecart"><?php print utf8_encode($liste_cat[$i]['GENRE']); ?></td>
-            <td class="ecart"><?php print utf8_encode($liste_cat[$i]['NOM']); ?></td>
-            <td class="ecart"><?php print utf8_encode($liste_cat[$i]['PRIX']); ?></td>
-            <td class="ecart"><?php print utf8_encode($liste_cat[$i]['PLATEFORME']); ?></td>
-            <td class="ecart"><?php print utf8_encode($liste_cat[$i]['IMAGE']); ?></td>
+            <td class="ecart">
+                <?php print utf8_encode($liste_cat[$i]['ID_JEUX']); ?>
+            </td>
+            <td>
+                <span contenteditable="true" name="nom_jeux" class="ecart" id="<?php print $liste_cat[$i]['ID_JEUX']; ?>">
+                    <?php print utf8_encode($liste_cat[$i]['NOM_JEUX']); ?>              
+                </span>
+            </td>
+            <td>
+                <span contenteditable="true" name="genre_jeux" class="ecart" id="<?php print $liste_cat[$i]['ID_JEUX']; ?>">
+                    <?php print utf8_encode($liste_cat[$i]['GENRE_JEUX']); ?>              
+                </span>
+            </td>
+            <td>
+                <span contenteditable="true" name="prix_jeux" class="ecart" id="<?php print $liste_cat[$i]['ID_JEUX']; ?>">
+                    <?php print utf8_encode($liste_cat[$i]['PRIX_JEUX']); ?>              
+                </span>
+            </td>
+            <td>
+                <span contenteditable="true" name="image_jeux" class="ecart" id="<?php print $liste_cat[$i]['ID_JEUX']; ?>">
+                    <?php print utf8_encode($liste_cat[$i]['IMAGE_JEUX']); ?>              
+                </span>
+            </td>
+            <td>
+                <span contenteditable="true" name="plateforme_jeux" class="ecart" id="<?php print $liste_cat[$i]['ID_JEUX']; ?>">
+                    <?php print utf8_encode($liste_cat[$i]['PLATEFORME_JEUX']); ?>              
+                </span>
+            </td>
         </tr>
         <?php
     }
