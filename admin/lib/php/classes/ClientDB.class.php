@@ -4,6 +4,7 @@ class ClientDB extends Client{
 
     private $_db;
     private $_infoArray = array();
+    private $_variable="valeur";
 
     public function __construct($cnx) {
         $this->_db = $cnx;

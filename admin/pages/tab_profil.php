@@ -9,7 +9,7 @@ $nb_cli = count($liste_cli);
 
 <table class="table-responsive">
     <?php
-    echo "<br><table cellspacing=10 border=2 BORDERCOLOR=#6666FF width=80% align=center bgcolor=#ffffff>";
+   echo "<br><table cellspacing=10 border=2 BORDERCOLOR=#6666FF width=80% align=center bgcolor=#ffffff>";
     ?>
     <tr>
         <th class="ecart">ID</th>
