@@ -80,6 +80,39 @@ class ClientDB extends Client{
         }
         return $_infoArray;
     }
+    
+        function getAllClient() {
+        try {
+            $query = "SELECT * FROM CLIENT order by 1";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+            $data = $resultset->fetchAll();
+//var_dump($data);
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = $data;
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        return $_infoArray;
+    }
+    
+        public function updateClient($champ,$nouveau,$id){                
+        try {
+            $query="UPDATE CLIENT set ".$champ." = '".$nouveau."' where ID_CLIENT ='".$id."'";            
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();            
+            
+        }catch(PDOException $e){
+            print $e->getMessage();
+        }
+    }
 
 
 }

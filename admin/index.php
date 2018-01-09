@@ -15,7 +15,7 @@ session_start();
         <script type="text/javascript" src="admin/lib/js/dist/jquery.validate.js"></script>
         <script src="admin/lib/js/gt_functionsVal.js"></script>
         <script src="admin/lib/js/gt_function.js"></script>
-        <link rel="stylesheet" type="text/css" href="/lib/css/style.css">
+        <link rel="stylesheet" type="text/css" href="lib/css/style.css">
     </head>
     <body>
         <div class="container">
@@ -29,7 +29,7 @@ session_start();
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-11">
                     <nav>
                         <?php
                         if (isset($_SESSION['admin'])) {

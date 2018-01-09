@@ -47,5 +47,27 @@ class JeuxDB extends Jeux {
         }
         return $_infoArray;
     }
+    
+                function getAllJeux() {
+        try {
+            $query = "SELECT * FROM JEUX order by 1";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+            $data = $resultset->fetchAll();
+//var_dump($data);
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = $data;
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        return $_infoArray;
+    }
 
 }

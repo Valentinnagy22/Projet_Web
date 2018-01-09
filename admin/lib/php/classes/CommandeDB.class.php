@@ -74,4 +74,26 @@ class CommandeDB extends Commande {
         return $_infoArray;
     }
     
+            function getAllCommande() {
+        try {
+            $query = "SELECT * FROM COMMANDE order by 1";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+            $data = $resultset->fetchAll();
+//var_dump($data);
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = $data;
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        return $_infoArray;
+    }
+    
 }

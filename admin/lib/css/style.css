@@ -1,6 +1,5 @@
 /* style projet web */
 
-
 header{
     margin-top : 3px;
     margin-left : 90px;
@@ -67,7 +66,7 @@ footer{
     margin-top: 20px;
 }
 
-#acheter, #annuler, #reset, #envoyer, #envoyer2, #reset2{
+#acheter, #annuler, #reset, #envoyer, #envoyer2, #reset2, #se_connecter, #reset3{
     padding:8px 0 8px 0;
     font:bold 13px Arial;
     background:#478bf9;
@@ -126,4 +125,29 @@ label{
 #envoyer2, #reset2{
     margin-top : 20px;
     margin-left : 10px;
+}
+
+#form_connexionadmin{
+    
+    margin-top : 50px;
+    margin-left : 250px;
+}
+
+#mdp4{
+    margin-top : 10px;
+    margin-bottom : 20px;
+}
+
+#accueil_admin{
+    margin-top: 60px;
+    margin-left: 150px;
+    font-size : 160%;
+    font-weight: bold;
+    color :red ;
+}
+
+#titre_gestion_cli{
+    margin-top : 50px;
+    margin-left : 250px;
+    color: cadetblue;
 }
